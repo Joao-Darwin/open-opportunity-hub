@@ -51,7 +51,7 @@ public class PrintMenuOptionsUtil {
 		} while (choice != 5);
 	}
 
-	public static void showOptionsFromSubMenu() {
+	private static void showOptionsFromSubMenu() {
 		System.out.println("1) Create");
 		System.out.println("2) Find");
 		System.out.println("3) Update");
