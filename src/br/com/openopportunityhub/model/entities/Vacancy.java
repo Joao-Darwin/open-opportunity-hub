@@ -1,4 +1,4 @@
-package br.com.openopportunityhub.model;
+package br.com.openopportunityhub.model.entities;
 
 public class Vacancy {
 	private int id;
