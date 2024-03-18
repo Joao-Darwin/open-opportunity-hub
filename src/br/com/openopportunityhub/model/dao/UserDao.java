@@ -53,7 +53,7 @@ public class UserDao {
 	
 	public List<User> findAll() {
 		List<User> users = new ArrayList<>();
-		String query = "SELECT * FROM \"User\"";
+		String query = "SELECT * FROM \"User\" ORDER BY id";
 		
 		try (PreparedStatement statement = connection.prepareStatement(query);
 				ResultSet resultSet = statement.executeQuery()) {	
@@ -98,7 +98,7 @@ public class UserDao {
 		User user = new User();
 		
 		user.setId(resultSet.getInt("id"));
-		user.setName(resultSet.getString("email"));
+		user.setName(resultSet.getString("name"));
 		user.setEmail(resultSet.getString("email"));
 		user.setPhone(resultSet.getString("phone"));
 		user.setGender(resultSet.getString("gender"));
