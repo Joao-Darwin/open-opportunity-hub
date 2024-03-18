@@ -81,7 +81,7 @@ public class User {
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder();
 		
-		stringBuilder.append("\n--------------------");
+		stringBuilder.append("\n---------- " + name + " ----------");
 		stringBuilder.append("\nID: " + this.id);
 		stringBuilder.append("\nNAME: " + this.name);
 		stringBuilder.append("\nEMAIL: " + this.email);
