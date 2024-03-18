@@ -9,7 +9,7 @@ public class PrintMenuOptionsUtil {
 		System.out.println("1) Users");
 		System.out.println("2) Vacancies");
 		System.out.println("3) Exit");
-		System.out.print("\nEscolha: ");
+		System.out.print("\nOpção: ");
 	}
 
 	public static void printMenuUserOptions(Scanner scanner) {
@@ -22,29 +22,29 @@ public class PrintMenuOptionsUtil {
 
 			switch (choice) {
 			case 1:
-				System.out.println("User criado!");
+				UserMenuOptionsUtil.createMenuOptions(scanner);
 				scanner.nextLine();
 				scanner.nextLine();
 				break;
 			case 2:
-				System.out.println("User encontrado!");
+				UserMenuOptionsUtil.findMenuOptions(scanner);
 				scanner.nextLine();
 				scanner.nextLine();
 				break;
 			case 3:
-				System.out.println("User atualizado!");
+				UserMenuOptionsUtil.updateMenuOptions(scanner);
 				scanner.nextLine();
 				scanner.nextLine();
 				break;
 			case 4:
-				System.out.println("User deletado!");
+				UserMenuOptionsUtil.deleteMenuOptions(scanner);
 				scanner.nextLine();
 				scanner.nextLine();
 				break;
 			case 5:
 				break;
 			default:
-				System.out.print("Opcao invalida! Aperte enter para tentar novamente...");
+				System.out.print("Opção invalida! Aperte enter para tentar novamente...");
 				scanner.nextLine();
 				scanner.nextLine();
 			}
@@ -57,7 +57,7 @@ public class PrintMenuOptionsUtil {
 		System.out.println("3) Update");
 		System.out.println("4) Delete");
 		System.out.println("5) Exit");
-		System.out.print("\nEscolha: ");
+		System.out.print("\nOpção: ");
 	}
 
 	public static void printMenuVacanciesOptions(Scanner scanner) {
@@ -72,28 +72,23 @@ public class PrintMenuOptionsUtil {
 			case 1:
 				System.out.println("Vacancie criado!");
 				scanner.nextLine();
-				scanner.nextLine();
 				break;
 			case 2:
 				System.out.println("Vacancie encontrado!");
-				scanner.nextLine();
 				scanner.nextLine();
 				break;
 			case 3:
 				System.out.println("Vacancie atualizado!");
 				scanner.nextLine();
-				scanner.nextLine();
 				break;
 			case 4:
 				System.out.println("Vacancie deletado!");
-				scanner.nextLine();
 				scanner.nextLine();
 				break;
 			case 5:
 				break;
 			default:
-				System.out.print("Opcao invalida! Aperte enter para tentar novamente...");
-				scanner.nextLine();
+				System.out.print("Opção invalida! Aperte enter para tentar novamente...");
 				scanner.nextLine();
 			}
 		} while (choice != 5);
