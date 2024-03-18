@@ -63,4 +63,19 @@ public class Vacancy {
 		return candidates;
 	}
 	
+	@Override
+	public String toString() {
+		StringBuilder stringBuilder = new StringBuilder();
+		
+		stringBuilder.append("\n---------- " + this.company + " ----------");
+		stringBuilder.append("\nID: " + this.id);
+		stringBuilder.append("\nCOMPANY: " + this.company);
+		stringBuilder.append("\nROLE: " + this.role);
+		stringBuilder.append("\nDESCRIPTION: " + this.description);
+		stringBuilder.append("\nSALARY: " + this.salary);
+		stringBuilder.append("\nCANDIDATES: " + this.candidates.size());
+		stringBuilder.append("\n--------------------");
+		
+		return stringBuilder.toString();
+	}
 }
