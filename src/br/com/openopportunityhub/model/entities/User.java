@@ -77,4 +77,20 @@ public class User {
 		return vacancies;
 	}
 	
+	@Override
+	public String toString() {
+		StringBuilder stringBuilder = new StringBuilder();
+		
+		stringBuilder.append("\n--------------------");
+		stringBuilder.append("\nID: " + this.id);
+		stringBuilder.append("\nNAME: " + this.name);
+		stringBuilder.append("\nEMAIL: " + this.email);
+		stringBuilder.append("\nGENDER: " + this.gender);
+		stringBuilder.append("\nAGE: " + this.age);
+		stringBuilder.append("\nVACANCIES: " + this.vacancies.size());
+		stringBuilder.append("\n--------------------");
+		
+		return stringBuilder.toString();
+	}
+	
 }
