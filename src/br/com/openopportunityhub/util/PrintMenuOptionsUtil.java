@@ -24,28 +24,23 @@ public class PrintMenuOptionsUtil {
 			case 1:
 				UserMenuOptionsUtil.createMenuOptions(scanner);
 				scanner.nextLine();
-				scanner.nextLine();
 				break;
 			case 2:
 				UserMenuOptionsUtil.findMenuOptions(scanner);
-				scanner.nextLine();
 				scanner.nextLine();
 				break;
 			case 3:
 				UserMenuOptionsUtil.updateMenuOptions(scanner);
 				scanner.nextLine();
-				scanner.nextLine();
 				break;
 			case 4:
 				UserMenuOptionsUtil.deleteMenuOptions(scanner);
-				scanner.nextLine();
 				scanner.nextLine();
 				break;
 			case 5:
 				break;
 			default:
 				System.out.print("Opção invalida! Aperte enter para tentar novamente...");
-				scanner.nextLine();
 				scanner.nextLine();
 			}
 		} while (choice != 5);
@@ -70,19 +65,19 @@ public class PrintMenuOptionsUtil {
 
 			switch (choice) {
 			case 1:
-				System.out.println("Vacancie criado!");
+				System.out.println("Vacancy criado!");
 				scanner.nextLine();
 				break;
 			case 2:
-				System.out.println("Vacancie encontrado!");
+				System.out.println("Vacancy encontrado!");
 				scanner.nextLine();
 				break;
 			case 3:
-				System.out.println("Vacancie atualizado!");
+				System.out.println("Vacancy atualizado!");
 				scanner.nextLine();
 				break;
 			case 4:
-				System.out.println("Vacancie deletado!");
+				System.out.println("Vacancy deletado!");
 				scanner.nextLine();
 				break;
 			case 5:
