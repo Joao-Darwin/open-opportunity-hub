@@ -19,7 +19,7 @@ public class VacancyDao {
 	}
 
 	public void create(Vacancy vacancy) {
-		String sql = "INSERT INTO Vacancy (company, role, description, salary) VALUES (?, ?, ?, ?)";
+		String sql = "INSERT INTO \"Vacancy\" (company, role, description, salary) VALUES (?, ?, ?, ?)";
 		try (PreparedStatement statement = connection.prepareStatement(sql)) {
 			statement.setString(1, vacancy.getCompany());
 			statement.setString(2, vacancy.getRole());
@@ -32,7 +32,7 @@ public class VacancyDao {
 	}
 
 	public Vacancy findById(int id) {
-		String sql = "SELECT * FROM Vacancy WHERE id = ?";
+		String sql = "SELECT * FROM \"Vacancy\" WHERE id = ?";
 		try (PreparedStatement statement = connection.prepareStatement(sql)) {
 			statement.setInt(1, id);
 			try (ResultSet resultSet = statement.executeQuery()) {
@@ -49,7 +49,7 @@ public class VacancyDao {
 
 	public List<Vacancy> findAll() {
 		List<Vacancy> vacancies = new ArrayList<>();
-		String sql = "SELECT * FROM Vacancy";
+		String sql = "SELECT * FROM \"Vacancy\" ORDER BY id";
 		try (PreparedStatement statement = connection.prepareStatement(sql);
 				ResultSet resultSet = statement.executeQuery()) {
 			while (resultSet.next()) {
@@ -62,7 +62,7 @@ public class VacancyDao {
 	}
 
 	public void update(int id, Vacancy vacancy) {
-		String sql = "UPDATE Vacancy SET company = ?, role = ?, description = ?, salary = ? WHERE id = ?";
+		String sql = "UPDATE \"Vacancy\" SET company = ?, role = ?, description = ?, salary = ? WHERE id = ?";
 		try (PreparedStatement statement = connection.prepareStatement(sql)) {
 			statement.setString(1, vacancy.getCompany());
 			statement.setString(2, vacancy.getRole());
@@ -76,7 +76,7 @@ public class VacancyDao {
 	}
 
 	public void delete(int id) {
-		String sql = "DELETE FROM Vacancy WHERE id = ?";
+		String sql = "DELETE FROM \"Vacancy\" WHERE id = ?";
 		try (PreparedStatement statement = connection.prepareStatement(sql)) {
 			statement.setInt(1, id);
 			statement.executeUpdate();
