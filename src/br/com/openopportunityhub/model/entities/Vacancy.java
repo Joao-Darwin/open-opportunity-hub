@@ -1,11 +1,16 @@
 package br.com.openopportunityhub.model.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Vacancy {
 	private int id;
 	private String company;
 	private String role;
 	private String description;
 	private double salary;
+	
+	private List<User> candidates = new ArrayList<>();
 	
 	public Vacancy() {
 	}
@@ -52,6 +57,10 @@ public class Vacancy {
 
 	public void setSalary(double salary) {
 		this.salary = salary;
+	}
+	
+	public List<User> getCandidates() {
+		return candidates;
 	}
 	
 }

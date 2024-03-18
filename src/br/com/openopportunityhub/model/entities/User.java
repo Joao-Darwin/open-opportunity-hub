@@ -1,5 +1,8 @@
 package br.com.openopportunityhub.model.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
 	private int id;
 	private String name;
@@ -7,6 +10,8 @@ public class User {
 	private String phone;
 	private String gender;
 	private int age;
+	
+	private List<Vacancy> vacancies = new ArrayList<>();
 	
 	public User() {
 	}
@@ -22,6 +27,10 @@ public class User {
 
 	public int getId() {
 		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -62,6 +71,10 @@ public class User {
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+	
+	public List<Vacancy> getVacancies() {
+		return vacancies;
 	}
 	
 }
