@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.openopportunityhub.db.exceptions.DbException;
+import br.com.openopportunityhub.model.dao.exceptions.VacancyNotFoundException;
 import br.com.openopportunityhub.model.entities.Vacancy;
 
 public class VacancyDao {
@@ -42,14 +43,15 @@ public class VacancyDao {
 		} catch (SQLException e) {
 			throw new DbException("Error finding vacancy: " + e.getMessage());
 		}
-		return null; // Return null if vacancy with given ID not found
+
+		throw new VacancyNotFoundException("Vacancy not found. ID: " + id);
 	}
 
 	public List<Vacancy> findAll() {
 		List<Vacancy> vacancies = new ArrayList<>();
 		String sql = "SELECT * FROM Vacancy";
 		try (PreparedStatement statement = connection.prepareStatement(sql);
-			 ResultSet resultSet = statement.executeQuery()) {
+				ResultSet resultSet = statement.executeQuery()) {
 			while (resultSet.next()) {
 				vacancies.add(instantiateVacancy(resultSet));
 			}
