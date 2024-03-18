@@ -1,5 +1,5 @@
 CREATE TABLE "User" (
-	id INT,
+	id SERIAL,
 	name VARCHAR(255) NOT NULL,
 	email VARCHAR(255) UNIQUE NOT NULL,
 	phone VARCHAR(11) UNIQUE NOT NULL,
@@ -11,7 +11,7 @@ CREATE TABLE "User" (
 );
 
 CREATE TABLE "Vacancy" (
-	id INT,
+	id SERIAL,
 	company VARCHAR(255) NOT NULL,
 	role VARCHAR(100) NOT NULL,
 	description VARCHAR(255) NOT NULL,
