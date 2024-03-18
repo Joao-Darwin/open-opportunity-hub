@@ -65,19 +65,19 @@ public class PrintMenuOptionsUtil {
 
 			switch (choice) {
 			case 1:
-				System.out.println("Vacancy criado!");
+				VacancyMenuOptionsUtil.createMenuOptions(scanner);
 				scanner.nextLine();
 				break;
 			case 2:
-				System.out.println("Vacancy encontrado!");
+				VacancyMenuOptionsUtil.findMenuOptions(scanner);
 				scanner.nextLine();
 				break;
 			case 3:
-				System.out.println("Vacancy atualizado!");
+				VacancyMenuOptionsUtil.updateMenuOptions(scanner);
 				scanner.nextLine();
 				break;
 			case 4:
-				System.out.println("Vacancy deletado!");
+				VacancyMenuOptionsUtil.deleteMenuOptions(scanner);
 				scanner.nextLine();
 				break;
 			case 5:
