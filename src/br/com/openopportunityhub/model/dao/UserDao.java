@@ -20,7 +20,7 @@ public class UserDao {
 	}
 	
 	public void create(User user) {
-		String query = "INSERT INTO User (name, email, phone, gender, age) VALUES (?, ?, ?, ?, ?)";
+		String query = "INSERT INTO \"User\" (name, email, phone, gender, age) VALUES (?, ?, ?, ?, ?)";
 		
 		try (PreparedStatement statement = connection.prepareStatement(query)) {
 			statement.setString(1, user.getName());
@@ -35,7 +35,7 @@ public class UserDao {
 	}
 	
 	public User findById(int id) {
-		String query = "SELECT * FROM User WHERE id = ?";
+		String query = "SELECT * FROM \"User\" WHERE id = ?";
 		
 		try (PreparedStatement statement = connection.prepareStatement(query)) {
 			statement.setInt(1, id);
@@ -53,7 +53,7 @@ public class UserDao {
 	
 	public List<User> findAll() {
 		List<User> users = new ArrayList<>();
-		String query = "SELECT * FROM User";
+		String query = "SELECT * FROM \"User\"";
 		
 		try (PreparedStatement statement = connection.prepareStatement(query);
 				ResultSet resultSet = statement.executeQuery()) {	
@@ -68,7 +68,7 @@ public class UserDao {
 	}
 	
 	public void update(int id, User user) {
-		String query = "UPDATE User SET name = ?, email = ?, phone = ?, gender = ?, age = ? WHERE id = ?";
+		String query = "UPDATE \"User\" SET name = ?, email = ?, phone = ?, gender = ?, age = ? WHERE id = ?";
 		
 		try (PreparedStatement statement = connection.prepareStatement(query)) {
 			statement.setString(1, user.getName());
@@ -84,7 +84,7 @@ public class UserDao {
 	}
 	
 	public void delete(int id) {
-		String query = "DELETE FROM User WHERE id = ?";
+		String query = "DELETE FROM \"User\" WHERE id = ?";
 		
 		try (PreparedStatement statement = connection.prepareStatement(query)) {
 			statement.setInt(1, id);
